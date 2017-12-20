@@ -6,7 +6,7 @@
 		<title>TH-Karma推送</title>
 		<link rel="stylesheet" type="text/css" href="styles/ymd.css"/>
 	</head>
-	<body>
+	<body  onload="loaded()">
 		<div class="page page1">
 			<!--<div id="mark">
 				<img src="images/loading1.gif" alt="" />
@@ -29,10 +29,13 @@
 									</div>
 								</div>
 							</div>
-							<div class="wrapbox">
-								<div class="scrollBar">
+							<div style="position: relative;">
+								<!--<div class="scrollBar">
 										<div id="scrollBox"></div>
-									</div>
+								</div>-->
+							
+							<div class="wrapbox" id="wrapbox">
+								
 								<div class="main">
 									<div class="ymd clear">
 										<div class="ymdName">讯码平台</div>
@@ -52,109 +55,23 @@
 											</li>
 										</ul>
 									</div>
-									<div class="ymd clear">
-										<div class="ymdName">讯码平台</div>
-										<ul class="ymdDetail">
-											<li class="clear">
-												<p>24778&一鸣食品【不能用于恶意刷单，仅供测试使用】</p> 
-												<p>03:36</p>
-											</li>
-											<li class="clear">
-												<p>24778&一鸣食品【不能用于恶意刷单】</p> 
-												<p>04:36</p>
-											</li>
-										</ul>
-									</div>
-									<div class="ymd clear">
-										<div class="ymdName">讯码平台</div>
-										<ul class="ymdDetail">
-											<li class="clear">
-												<p>24778&一鸣食品【不能用于恶意刷单，仅供测试使用】</p> 
-												<p>03:36</p>
-											</li>
-											<li class="clear">
-												<p>24778&一鸣食品【不能用于恶意刷单】</p> 
-												<p>04:36</p>
-											</li>
-										</ul>
-									</div>
-									<div class="ymd clear">
-										<div class="ymdName">讯码平台</div>
-										<ul class="ymdDetail">
-											<li class="clear">
-												<p>24778&一鸣食品【不能用于恶意刷单，仅供测试使用】</p> 
-												<p>03:36</p>
-											</li>
-											<li class="clear">
-												<p>24778&一鸣食品【不能用于恶意刷单】</p> 
-												<p>04:36</p>
-											</li>
-										</ul>
-									</div>
-									<div class="ymd clear">
-										<div class="ymdName">讯码平台</div>
-										<ul class="ymdDetail">
-											<li class="clear">
-												<p>24778&一鸣食品【不能用于恶意刷单，仅供测试使用】</p> 
-												<p>03:36</p>
-											</li>
-											<li class="clear">
-												<p>24778&一鸣食品【不能用于恶意刷单】</p> 
-												<p>04:36</p>
-											</li>
-										</ul>
-									</div>
-									<div class="ymd clear">
-										<div class="ymdName">讯码平台</div>
-										<ul class="ymdDetail">
-											<li class="clear">
-												<p>24778&一鸣食品【不能用于恶意刷单，仅供测试使用】</p> 
-												<p>03:36</p>
-											</li>
-											<li class="clear">
-												<p>24778&一鸣食品【不能用于恶意刷单】</p> 
-												<p>04:36</p>
-											</li>
-										</ul>
-									</div>
-									<div class="ymd clear">
-										<div class="ymdName">讯码平台</div>
-										<ul class="ymdDetail">
-											<li class="clear">
-												<p>24778&一鸣食品【不能用于恶意刷单，仅供测试使用】</p> 
-												<p>03:36</p>
-											</li>
-											<li class="clear">
-												<p>24778&一鸣食品【不能用于恶意刷单】</p> 
-												<p>04:36</p>
-											</li>
-										</ul>
-									</div>
-									<div class="ymd clear">
-										<div class="ymdName">讯码平台</div>
-										<ul class="ymdDetail">
-											<li class="clear">
-												<p>24778&一鸣食品【不能用于恶意刷单，仅供测试使用】</p> 
-												<p>03:36</p>
-											</li>
-											<li class="clear">
-												<p>24778&一鸣食品【不能用于恶意刷单】</p> 
-												<p>04:36</p>
-											</li>
-										</ul>
-									</div>
+									
 								</div>
+							</div>
 							</div>
 						</div>
 						<p class="end">—— TH-Karma ——</p>
 					</div>
 				</div>
 				<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+				<script src="js/iscroll.js"></script>
+			    <script src="js/demoUtils.js"></script>
+			    	
 				<script>
-					var height = document.documentElement.clientHeight;
-					console.log(height)
-					wrapboxHeight = height - 220;
-					scrollBoxHeight = wrapboxHeight*wrapboxHeight/(parseInt($(".main").css('height')))
+					var height = document.documentElement.clientHeight; //屏幕高度
+					wrapboxHeight = height - 220; //滚动外层高度，滚动条高度
+					scrollBoxHeight = wrapboxHeight*wrapboxHeight/(parseInt($(".main").css('height'))); 
+					//滚动快高度
 					$(".wrapbox").css({"height": wrapboxHeight })
 					$(".scrollBar").css({"height": wrapboxHeight })
 					$("#scrollBox").css({"height": scrollBoxHeight })
@@ -182,94 +99,75 @@
 					     if(r!=null)return  unescape(r[2]); return null;
 					}
 
+setTimeout(function(){
+	for(var i = 0;i<50;i++){
+		console.log(i);
+		var li = `<li class="clear"><p>24778&一鸣食品【不能用于恶意刷单，仅供测试使用】</p> <p class="time-wrapper"><div class="time">03:36</div></p></li>`
+		$(".ymdDetail").append(li);
+		
+	}
+	loaded();
+},200)
 
-//					var id = GetQueryString('id')
-//					$.ajax({
-//						type: 'GET',
-//						url: '/wechatmsg/data/'+id,
-//						dataType: 'json',
-//						success: function(data) {
-//							if(data.status == 200){
-//								allPull(data);
-//								setTimeout(function(){
-//									$("#mark").fadeOut(300)
-//								},500)
-//							}else{
-//								$("#worryText").html('网络异常,请重试')
-//							}
-//						},
-//						error: function(xhr, type) {
-//							console.log('Ajax error!')
-//							$("#worryText").html('网络异常,请重试')
-//						}
-//					})
+
+var myScroll;
+
+function loaded () {
+	myScroll = new IScroll('#wrapbox', {
+		scrollbars: 'custom',
+		mouseWheel: true,
+		interactiveScrollbars: true,
+		shrinkScrollbars: 'scale',
+		fadeScrollbars: false
+	});
+}
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
+	capture: false,
+	passive: false
+} : false);
 
 
 	$('body').bind('touchmove', function(e) { 
-	    console.log($('.main').scrollTop()); // 计算你的屏幕高度
-	    $('.main').css({'margin-top':-200})
-	});
-//	
-//	window.addEventListener('scroll', function () {
-//  console.log("移动端可以实现")
-//})
-			
+		console.log( $(".main").css('transform').replace(/[^0-9\-,]/g,'').split(',')[5] )
+	    $("#status").html($(".main").css('transform').replace(/[^0-9\-,]/g,'').split(','))
+	});		
 						
-					document.addEventListener('touchstart', function(e) {
-						location1 = parseInt($('#scrollBox').css('top'));
-						console.log(e)
-                        var touches = e.touches[0]
-                        startTx = touches.clientX
-                        startTy = touches.clientY
-                        console.log( startTy )
-                        isTouchMove = false;
-                    }, false);
-					
-					document.getElementById('scrollBox').addEventListener('touchmove', function(e) {
-                        var touches = e.changedTouches[0],
-                            endTx = touches.clientX,
-                            endTy = touches.clientY,
-                            distanceX = startTx - endTx,
-                            distanceY = startTy - endTy;
-                            document.getElementById('scrollBox').style.top = location1 - distanceY + "px";
-                            console.log( parseInt($("#scrollBox").css('top')) )
-                            $('.main').css({'margin-top': - parseInt($("#scrollBox").css('top'))/wrapboxHeight * parseInt($('.main').css('height')) })
-                            console.log( distanceY )
-                            
-                            if( parseInt(document.getElementById('scrollBox').style.top) <= 0 ){
-                            	document.getElementById('scrollBox').style.top = 0+'px'
-                            }
-                            if( parseInt(document.getElementById('scrollBox').style.top) >= wrapboxHeight ){
-                            	document.getElementById('scrollBox').style.top = wrapboxHeight+'px'
-                            }
-                            
-                            
-                    }, false);
-					
-					document.getElementById('scrollBox').addEventListener('touchend', function(e) {
-                        if (!isTouchMove) {
-                        	console.log(666666)
-                            return;
-                        }
-                        console.log(7777)
+//					document.getElementById('scrollBox').addEventListener('touchstart', function(e) {
+//						location1 = parseInt($('#scrollBox').css('top'));
+//                      var touches = e.touches[0]
+//                      startTx = touches.clientX
+//                      startTy = touches.clientY
+//                      isTouchMove = false;
+//                  }, false);
+//					
+//					document.getElementById('scrollBox').addEventListener('touchmove', function(e) {
 //                      var touches = e.changedTouches[0],
 //                          endTx = touches.clientX,
 //                          endTy = touches.clientY,
 //                          distanceX = startTx - endTx,
-//                          distanceY = startTy - endTy,
-//                          isSwipe = false
-//                      if (Math.abs(distanceX) >= Math.abs(distanceY)) {
-//                          if (distanceY < 0) {
-//                              return;
+//                          distanceY = startTy - endTy;
+//                          document.getElementById('scrollBox').style.top = location1 - distanceY + "px";
+//                          $('.main').css({'margin-top': - parseInt($("#scrollBox").css('top'))/wrapboxHeight * parseInt($('.main').css('height')) })
+//                          
+//                          
+//                          if( parseInt(document.getElementById('scrollBox').style.top) <= 0 ){
+//                          	document.getElementById('scrollBox').style.top = 0+'px'
 //                          }
-//                          if (Math.abs(distanceY) < 60) {
-//                              isSwipe = true
-////                              document.getElementById('scrollBox').style.marginLeft = 0 + "px"
-//                          } else {
-////                              document.getElementById('scrollBox').style.marginLeft = "-156px"
+//                          if( parseInt(document.getElementById('scrollBox').style.top) >= wrapboxHeight-scrollBoxHeight ){
+//                          	document.getElementById('scrollBox').style.top = wrapboxHeight-scrollBoxHeight+'px'
 //                          }
+//                          
+//                          
+//                  }, false);
+//					
+//					document.getElementById('scrollBox').addEventListener('touchend', function(e) {
+//                      if (!isTouchMove) {
+//                      	console.log(666666)
+//                          return;
 //                      }
-                    }, false);
+//
+//                  }, false);
 				</script>
 	</body>
 </html>
