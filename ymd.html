@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta  name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+		<title>TH-Karma推送</title>
+		<link rel="stylesheet" type="text/css" href="styles/ymd.css"/>
+	</head>
+	<body>
+		<div class="page page1">
+			<!--<div id="mark">
+				<img src="images/loading1.gif" alt="" />
+				<p id="worryText">数据正在努力加载中...</p>
+			</div>-->
+					<div class='h1'><img src="images/thLogo.png" alt="威胁猎人图标" />
+						<span>猎人服务号</span>
+					</div>
+					
+					<div class="container">
+						<div class="wrapborder">
+							<div class="border">
+								<h1>羊毛党每日新增目标</h1>
+								<div class="box clear">
+									<div class="name">
+										<span class="username">bilibili</span>
+									</div>
+									<div class="status">
+										<span id="status">2017年12月18日</span>
+									</div>
+								</div>
+							</div>
+							<div class="wrapbox">
+								<div class="scrollBar">
+										<div id="scrollBox"></div>
+									</div>
+								<div class="main">
+									<div class="ymd clear">
+										<div class="ymdName">讯码平台</div>
+										<ul class="ymdDetail">
+											<li class="clear">
+												<p>24778&一鸣食品【不能用于恶意刷单，仅供测试使用】</p> 
+												<p class="time-wrapper">
+													<div class="time">03:36</div>
+												</p>
+												
+											</li>
+											<li class="clear">
+												<p>24778&一鸣食品【不能用于恶意刷单】</p> 
+												<p class="time-wrapper">
+													<div class="time">03:36</div>
+												</p>
+											</li>
+										</ul>
+									</div>
+									<div class="ymd clear">
+										<div class="ymdName">讯码平台</div>
+										<ul class="ymdDetail">
+											<li class="clear">
+												<p>24778&一鸣食品【不能用于恶意刷单，仅供测试使用】</p> 
+												<p>03:36</p>
+											</li>
+											<li class="clear">
+												<p>24778&一鸣食品【不能用于恶意刷单】</p> 
+												<p>04:36</p>
+											</li>
+										</ul>
+									</div>
+									<div class="ymd clear">
+										<div class="ymdName">讯码平台</div>
+										<ul class="ymdDetail">
+											<li class="clear">
+												<p>24778&一鸣食品【不能用于恶意刷单，仅供测试使用】</p> 
+												<p>03:36</p>
+											</li>
+											<li class="clear">
+												<p>24778&一鸣食品【不能用于恶意刷单】</p> 
+												<p>04:36</p>
+											</li>
+										</ul>
+									</div>
+									<div class="ymd clear">
+										<div class="ymdName">讯码平台</div>
+										<ul class="ymdDetail">
+											<li class="clear">
+												<p>24778&一鸣食品【不能用于恶意刷单，仅供测试使用】</p> 
+												<p>03:36</p>
+											</li>
+											<li class="clear">
+												<p>24778&一鸣食品【不能用于恶意刷单】</p> 
+												<p>04:36</p>
+											</li>
+										</ul>
+									</div>
+									<div class="ymd clear">
+										<div class="ymdName">讯码平台</div>
+										<ul class="ymdDetail">
+											<li class="clear">
+												<p>24778&一鸣食品【不能用于恶意刷单，仅供测试使用】</p> 
+												<p>03:36</p>
+											</li>
+											<li class="clear">
+												<p>24778&一鸣食品【不能用于恶意刷单】</p> 
+												<p>04:36</p>
+											</li>
+										</ul>
+									</div>
+									<div class="ymd clear">
+										<div class="ymdName">讯码平台</div>
+										<ul class="ymdDetail">
+											<li class="clear">
+												<p>24778&一鸣食品【不能用于恶意刷单，仅供测试使用】</p> 
+												<p>03:36</p>
+											</li>
+											<li class="clear">
+												<p>24778&一鸣食品【不能用于恶意刷单】</p> 
+												<p>04:36</p>
+											</li>
+										</ul>
+									</div>
+									<div class="ymd clear">
+										<div class="ymdName">讯码平台</div>
+										<ul class="ymdDetail">
+											<li class="clear">
+												<p>24778&一鸣食品【不能用于恶意刷单，仅供测试使用】</p> 
+												<p>03:36</p>
+											</li>
+											<li class="clear">
+												<p>24778&一鸣食品【不能用于恶意刷单】</p> 
+												<p>04:36</p>
+											</li>
+										</ul>
+									</div>
+									<div class="ymd clear">
+										<div class="ymdName">讯码平台</div>
+										<ul class="ymdDetail">
+											<li class="clear">
+												<p>24778&一鸣食品【不能用于恶意刷单，仅供测试使用】</p> 
+												<p>03:36</p>
+											</li>
+											<li class="clear">
+												<p>24778&一鸣食品【不能用于恶意刷单】</p> 
+												<p>04:36</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<p class="end">—— TH-Karma ——</p>
+					</div>
+				</div>
+				<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+				<script>
+					var height = document.documentElement.clientHeight;
+					console.log(height)
+					wrapboxHeight = height - 220;
+					scrollBoxHeight = wrapboxHeight*wrapboxHeight/(parseInt($(".main").css('height')))
+					$(".wrapbox").css({"height": wrapboxHeight })
+					$(".scrollBar").css({"height": wrapboxHeight })
+					$("#scrollBox").css({"height": scrollBoxHeight })
+					
+					document.getElementsByTagName("html")[0].style.fontSize = parseInt(height * 50 / 667) + "px";
+					
+					$(".ymdName").css( {"height":$(".ymdDetail").css("height")} )
+//					$(".time").css({"height": $(".time").siblings('p').css('height') })
+
+					function toThousands(num) {
+						var result = [],
+							counter = 0;
+						num = (num || 0).toString().split('');
+						for(var i = num.length - 1; i >= 0; i--) {
+							counter++;
+							result.unshift(num[i]);
+							if(!(counter % 3) && i != 0) { result.unshift(','); }
+						}
+						return result.join('');
+					}
+					function GetQueryString(name)
+					{
+					     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+					     var r = window.location.search.substr(1).match(reg);
+					     if(r!=null)return  unescape(r[2]); return null;
+					}
+
+
+//					var id = GetQueryString('id')
+//					$.ajax({
+//						type: 'GET',
+//						url: '/wechatmsg/data/'+id,
+//						dataType: 'json',
+//						success: function(data) {
+//							if(data.status == 200){
+//								allPull(data);
+//								setTimeout(function(){
+//									$("#mark").fadeOut(300)
+//								},500)
+//							}else{
+//								$("#worryText").html('网络异常,请重试')
+//							}
+//						},
+//						error: function(xhr, type) {
+//							console.log('Ajax error!')
+//							$("#worryText").html('网络异常,请重试')
+//						}
+//					})
+
+
+	$('body').bind('touchmove', function(e) { 
+	    console.log($('.main').scrollTop()); // 计算你的屏幕高度
+	    $('.main').css({'margin-top':-200})
+	});
+//	
+//	window.addEventListener('scroll', function () {
+//  console.log("移动端可以实现")
+//})
+			
+						
+					document.addEventListener('touchstart', function(e) {
+						location1 = parseInt($('#scrollBox').css('top'));
+						console.log(e)
+                        var touches = e.touches[0]
+                        startTx = touches.clientX
+                        startTy = touches.clientY
+                        console.log( startTy )
+                        isTouchMove = false;
+                    }, false);
+					
+					document.getElementById('scrollBox').addEventListener('touchmove', function(e) {
+                        var touches = e.changedTouches[0],
+                            endTx = touches.clientX,
+                            endTy = touches.clientY,
+                            distanceX = startTx - endTx,
+                            distanceY = startTy - endTy;
+                            document.getElementById('scrollBox').style.top = location1 - distanceY + "px";
+                            console.log( parseInt($("#scrollBox").css('top')) )
+                            $('.main').css({'margin-top': - parseInt($("#scrollBox").css('top'))/wrapboxHeight * parseInt($('.main').css('height')) })
+                            console.log( distanceY )
+                            
+                            if( parseInt(document.getElementById('scrollBox').style.top) <= 0 ){
+                            	document.getElementById('scrollBox').style.top = 0+'px'
+                            }
+                            if( parseInt(document.getElementById('scrollBox').style.top) >= wrapboxHeight ){
+                            	document.getElementById('scrollBox').style.top = wrapboxHeight+'px'
+                            }
+                            
+                            
+                    }, false);
+					
+					document.getElementById('scrollBox').addEventListener('touchend', function(e) {
+                        if (!isTouchMove) {
+                        	console.log(666666)
+                            return;
+                        }
+                        console.log(7777)
+//                      var touches = e.changedTouches[0],
+//                          endTx = touches.clientX,
+//                          endTy = touches.clientY,
+//                          distanceX = startTx - endTx,
+//                          distanceY = startTy - endTy,
+//                          isSwipe = false
+//                      if (Math.abs(distanceX) >= Math.abs(distanceY)) {
+//                          if (distanceY < 0) {
+//                              return;
+//                          }
+//                          if (Math.abs(distanceY) < 60) {
+//                              isSwipe = true
+////                              document.getElementById('scrollBox').style.marginLeft = 0 + "px"
+//                          } else {
+////                              document.getElementById('scrollBox').style.marginLeft = "-156px"
+//                          }
+//                      }
+                    }, false);
+				</script>
+	</body>
+</html>
